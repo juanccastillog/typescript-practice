@@ -1,7 +1,5 @@
 import { Stack } from "./stack";
 
-document.getElementById("processButton")?.addEventListener("click", () => {process()})
-
 interface Wall {
   height: number,
   xIndex: number,
@@ -28,12 +26,4 @@ const getTrappedWaterArea = (wallHeightList : number[]): number => {
   return collectedWater;
 }
 
-const process = () => {
-  try {
-    const inputList = (<HTMLInputElement>document.getElementById("inputList")).value;
-    const wallHeightList = inputList.split(',').filter(listElement => !isNaN(parseInt(listElement, 10))).map(n => parseInt(n,10));
-    document.getElementById('resultLabel')!.textContent = getTrappedWaterArea(wallHeightList).toString();
-  } catch (e) {
-    document.getElementById('resultLabel')!.textContent = 'An error occurred.';
-  }
-}
+export default getTrappedWaterArea;

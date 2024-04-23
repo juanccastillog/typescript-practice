@@ -1,6 +1,6 @@
 const path = require('path');
 module.exports = {
-  entry: './src/main.ts',
+  entry: './src/entry/remove-dups-linked-list.ts',
   devtool: 'inline-source-map',
   devServer: {
     static: './dist'
